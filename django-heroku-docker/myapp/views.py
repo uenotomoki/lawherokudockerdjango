@@ -9,7 +9,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import render
 from .forms import SendUrlForm
 #from .js_scraping_20211230 import d202112
-from .austlian_page import d20220217
+#from .austlian_page import d20220217
 from django.http import HttpResponse
 
 
@@ -27,10 +27,6 @@ class TopView(TemplateView):
     #@login_required
     def get(self,request):
         print('get')
-        print('get')
-        print('get')
-        print('get')
-        print('get')
         return render(request,'myapp/home.html',self.params)
 
     def post(self,request):
@@ -38,7 +34,7 @@ class TopView(TemplateView):
 
         #a = d20220217()
 
-        self.params['data'] = "a[0]"
+        self.params['data'] = "20220710"
 
         return render(request,'myapp/home.html',self.params)
 
@@ -61,34 +57,3 @@ def ajax_number(request):
         'minus': 'minus',
     }
     return JsonResponse(d)
-
-
-
-
-
-
-
-# class TopView(TemplateView):
-#     # def __init__(self):
-#     #     self.params = {
-#     #         'user':'',
-#     #         'data':'',
-#     #         'data_user':'',
-#     #         'data_comment_num':[],
-#     #         'form_send_url':SendUrlForm(),
-#     #     }
-
-#     def get(self,request):
-#         return render(request,'myapp/home.html',self.params)
-
-#     # def post(self,request):
-#     #     self.params['url_contents'] = request.POST['url_contents']
-
-#     #     #self.params['data'] = main()
-#     #     #self.params['data'] = d202112()
-#     #     #self.params['data'] = d20220217()
-#     #     a = d20220217()
-#     #     print(a)
-
-#     #     return HttpResponse(a[0])
-#     #     #return render(request,'myapp/home.html',self.params)

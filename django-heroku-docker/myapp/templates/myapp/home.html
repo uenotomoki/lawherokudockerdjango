@@ -78,10 +78,17 @@
 
 AAA
 
-<form action="{% url 'top' %}" method="post">
+<!-- <form action="{% url 'top' %}" method="post">
     {% csrf_token %}
     {{form_send_url}}
     <input type="submit" value="送信">
+</form> -->
+
+<form action="{% url 'top' %}" method="POST">
+    {% csrf_token %}
+    <input type="number" id="number1" required>
+    <input type="number" id="number2" required>
+    <button type="submit" >計算</button>
 </form>
 
 <p>{{url_contents}}</p>
